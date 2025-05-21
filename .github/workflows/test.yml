@@ -61,6 +61,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: inference-speed-report
-        path: ./inference_reports/ # スクリプトが出力した結果ファイルやログファイルのパスを指定
-          # 例: ./inference_speed_result.txt
-          # 例: ./inference_reports/
+        path: ./inference_reports/
