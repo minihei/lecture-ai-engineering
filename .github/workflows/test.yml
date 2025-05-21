@@ -40,3 +40,27 @@ jobs:
       run: |
         pytest day5/演習3/tests/test_model.py -v
   
+
+    - name: Prepare for inference speed test # 追加分
+      run: |
+        # もし推論用スクリプトが特定のデータ配置を期待する場合、ここで準備します。
+        # 例: cp day5/演習3/data/processed/titanic_processed.csv ./titanic_for_inference.csv
+        # 例: cp day5/演習3/models/your_model.pkl ./model_for_inference.pkl
+        echo "Preparation step if needed"
+
+    - name: Measure inference speed
+      run: |
+        # ここで推論スピードを測定するPythonスクリプトを実行します。
+        # スクリプトはリポジトリ内に事前に作成しておきます。
+        # スクリプト内で時間測定と結果の出力を行います。
+        echo "Running inference speed measurement script..."
+        python C:\git-fed\lecture-ai-engineering\measure_titanic_inference.py # スクリプトのパスを正しく指定してください
+
+    # (オプション) 測定結果をアーティファクトとして保存
+    - name: Upload inference speed result
+      uses: actions/upload-artifact@v4
+      with:
+        name: inference-speed-report
+        path: # スクリプトが出力した結果ファイルやログファイルのパスを指定
+          # 例: ./inference_speed_result.txt
+          # 例: ./inference_reports/
