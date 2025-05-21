@@ -1,0 +1,2 @@
+Error during script execution: Model file not found at day5/‰‰K1\models\titanic_model.pkl. Ensure 'day5/‰‰K1/main.py' has been run to generate the model.
+Make sure the model and data files exist at the specified paths.
