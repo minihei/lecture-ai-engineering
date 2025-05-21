@@ -54,13 +54,13 @@ jobs:
         # スクリプトはリポジトリ内に事前に作成しておきます。
         # スクリプト内で時間測定と結果の出力を行います。
         echo "Running inference speed measurement script..."
-        python C:\git-fed\lecture-ai-engineering\measure_titanic_inference.py # スクリプトのパスを正しく指定してください
+        python day5\measure_titanic_inference.py # スクリプトのパスを正しく指定してください
 
     # (オプション) 測定結果をアーティファクトとして保存
     - name: Upload inference speed result
       uses: actions/upload-artifact@v4
       with:
         name: inference-speed-report
-        path: # スクリプトが出力した結果ファイルやログファイルのパスを指定
+        path: ./inference_reports/# スクリプトが出力した結果ファイルやログファイルのパスを指定
           # 例: ./inference_speed_result.txt
           # 例: ./inference_reports/
