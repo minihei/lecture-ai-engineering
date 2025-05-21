@@ -41,7 +41,7 @@ jobs:
         pytest day5/演習3/tests/test_model.py -v
   
 
-    - name: Prepare for inference speed test # 追加分
+    - name: Prepare for inference speed test # 宿題用追加分
       run: |
         # もし推論用スクリプトが特定のデータ配置を期待する場合、ここで準備します。
         # 例: cp day5/演習3/data/processed/titanic_processed.csv ./titanic_for_inference.csv
