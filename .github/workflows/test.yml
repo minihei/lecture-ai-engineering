@@ -54,7 +54,7 @@ jobs:
         # スクリプトはリポジトリ内に事前に作成しておきます。
         # スクリプト内で時間測定と結果の出力を行います。
         echo "Running inference speed measurement script..."
-        python day5\measure_titanic_inference.py # スクリプトのパスを正しく指定してください
+        python measure_titanic_inference.py # スクリプトのパスを正しく指定してください
 
     # (オプション) 測定結果をアーティファクトとして保存
     - name: Upload inference speed result
