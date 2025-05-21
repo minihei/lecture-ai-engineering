@@ -2,7 +2,7 @@ name: ML Pipeline CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master ]  # pushは対象外にしてたのを解除 宿題用追加分
   pull_request:
     branches: [ main, master ]
 
@@ -48,7 +48,7 @@ jobs:
         # 例: cp day5/演習3/models/your_model.pkl ./model_for_inference.pkl
         echo "Preparation step if needed"
 
-    - name: Measure inference speed
+    - name: Measure inference speed # 宿題用追加分
       run: |
         # ここで推論スピードを測定するPythonスクリプトを実行します。
         # スクリプトはリポジトリ内に事前に作成しておきます。
@@ -56,7 +56,7 @@ jobs:
         echo "Running inference speed measurement script..."
         python measure_titanic_inference.py # スクリプトのパスを正しく指定してください
 
-    # (オプション) 測定結果をアーティファクトとして保存
+    # (オプション) 測定結果をアーティファクトとして保存 # 宿題用追加分
     - name: Upload inference speed result
       uses: actions/upload-artifact@v4
       with:
